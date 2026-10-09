@@ -35,7 +35,7 @@ The analysis covers product portfolio changes, manufacturing costs, customer dis
 		    ) AS percentage_chg
 		FROM fact_sales_monthly;
 
-  * 3.Provide a report with all the unique product counts for each segment and 
+* 3.Provide a report with all the unique product counts for each segment and 
 		sort them in descending order of product counts. The final output contains
 		2 fields:-  segment / product_count.
     
@@ -46,7 +46,7 @@ The analysis covers product portfolio changes, manufacturing costs, customer dis
 		group by segment
 		order by Product_count desc;
 
-   * 4. Which segment had the most increase in unique products in
+* 4.Which segment had the most increase in unique products in
  		2021 vs 2020? The final output contains these fields
 		segment / product_count_2020 / product_count_2021 / difference.
 
@@ -60,7 +60,7 @@ The analysis covers product portfolio changes, manufacturing costs, customer dis
 			on p.product_code = s.product_code
 		group by segment;
 
-	* 5.Get the products that have the highest and lowest manufacturing costs.
+* 5.Get the products that have the highest and lowest manufacturing costs.
 		 The final output should contain these fields,
    			product_code / product / manufacturing_cost.
 
