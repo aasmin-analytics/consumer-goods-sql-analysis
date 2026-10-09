@@ -13,6 +13,7 @@ The analysis covers product portfolio changes, manufacturing costs, customer dis
 
 # Requests:
 * 1.Provide the list of markets in which customer "Atliq Exclusive" operates its business in the APAC region.
+  
 		SELECT 
 		market
 		FROM gdb023.dim_customer
@@ -36,7 +37,7 @@ The analysis covers product portfolio changes, manufacturing costs, customer dis
 
   * 3.Provide a report with all the unique product counts for each segment and 
 		sort them in descending order of product counts. The final output contains
-		2 fields, segment, product_count.
+		2 fields:-  segment / product_count.
     
 		Select 
 			segment,
@@ -46,8 +47,8 @@ The analysis covers product portfolio changes, manufacturing costs, customer dis
 		order by Product_count desc;
 
    * 4.Follow-up: Which segment had the most increase in unique products in
- 		2021 vs 2020? The final output contains these fields,
-		segment product_count_2020 / product_count_2021 / difference.
+ 		2021 vs 2020? The final output contains these fields
+		segment / product_count_2020 / product_count_2021 / difference.
 
 		SELECT p.segment,
 		    COUNT(DISTINCT CASE WHEN YEAR(date) = 2020 THEN p.product_code END) AS unique_products_2020,
