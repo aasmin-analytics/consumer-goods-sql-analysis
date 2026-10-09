@@ -53,8 +53,8 @@ The analysis covers product portfolio changes, manufacturing costs, customer dis
 		SELECT p.segment,
 		    COUNT(DISTINCT CASE WHEN YEAR(date) = 2020 THEN p.product_code END) AS unique_products_2020,
 		    COUNT(DISTINCT CASE WHEN YEAR(date) = 2021 THEN p.product_code END) AS unique_products_2021,
-		    (COUNT(DISTINCT CASE WHEN YEAR(date) = 2021 THEN p.product_code END)
-		            - COUNT(DISTINCT CASE WHEN YEAR(date) = 2020 THEN p.product_code END)) as Difference
+		    (COUNT(DISTINCT CASE WHEN YEAR(date) = 2021 THEN p.product_code END) -
+		            COUNT(DISTINCT CASE WHEN YEAR(date) = 2020 THEN p.product_code END)) as Difference
 		    from fact_sales_monthly s
 		    join dim_product p
 				on p.product_code = s.product_code
