@@ -169,9 +169,9 @@ The analysis covers product portfolio changes, manufacturing costs, customer dis
 		GROUP BY c.channel
 		ORDER BY percentage DESC;
 
-  * 10. Get the Top 3 products in each division that have a high
+* 10. Get the Top 3 products in each division that have a high
  		total_sold_quantity in the fiscal_year 2021? The final output contains these
-		fields, division / product_code / product / total_sold_quantity / rank_order
+		fields, division / product_code / product / total_sold_quantity / rank_order.
 
 		with product_sales as 
 			(Select 
