@@ -169,7 +169,7 @@ The analysis covers product portfolio changes, manufacturing costs, customer dis
 		GROUP BY c.channel
 		ORDER BY percentage DESC;
 
-* 10. Get the Top 3 products in each division that have a high
+* 10.Get the Top 3 products in each division that have a high
  		total_sold_quantity in the fiscal_year 2021? The final output contains these
 		fields, division / product_code / product / total_sold_quantity / rank_order.
 
@@ -178,7 +178,7 @@ The analysis covers product portfolio changes, manufacturing costs, customer dis
 				p.division,
 				p.Product_code,
 				p.product,
-				sum(s.sold_quantity) as Total_sold_quantity
+			sum(s.sold_quantity) as Total_sold_quantity
 			from fact_sales_monthly s
 			join dim_product p
 				on p.product_code = s.product_code
@@ -186,16 +186,16 @@ The analysis covers product portfolio changes, manufacturing costs, customer dis
 			group by 
 				p.division,
 				p.product_code,
-		        p.product
+        		p.product
 			),
 		rank_product as 
-				(select 
-					division,
-					Product_code,
-					product,
-					Total_sold_quantity,
-					rank() over(partition by division order by Total_sold_quantity desc) as rank_order
-				from product_sales )
+		(select 
+				division,
+				Product_code,
+				product,
+				Total_sold_quantity,
+			rank() over(partition by division order by Total_sold_quantity desc) as rank_order
+		from product_sales )
 		select * 
 		from rank_product
 		where rank_order <= 3
